@@ -15,7 +15,7 @@ namespace Chapter9Task11
 			{
 				Console.Write ("Choose your option: ");
 			}
-			while(!(int.TryParse (Console.ReadLine(), out choice)) || choice < 1 || choice > 3);
+			while(!(int.TryParse (Console.ReadLine(), out choice)) || choice < 0 || choice > 3);
 			return choice;
 		}
 				
