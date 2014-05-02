@@ -1,17 +1,16 @@
 using System;
 
-namespace Chapter10Task2
+namespace Chapter10Task4
 {
-	class AllCombinations
+	class AllWords
 	{
-		static int n, k;
+		static int k;
 		static int []comb;
+		static string []words = {"test", "rock", "fun"};
 				
 		static void Main()
 		{
-			Console.WriteLine ("Please enter n and k!");
-			Console.Write("n = ");
-			n = int.Parse (Console.ReadLine ());
+			Console.WriteLine ("Please enter k!");
 			Console.Write ("k = ");
 			k = int.Parse (Console.ReadLine ());
 			
@@ -24,19 +23,19 @@ namespace Chapter10Task2
 		{ 
 			if(p > k)
 				return;
-			for(int counter = last; counter <= n; counter++)
+			for(int counter = last; counter <= 3; counter++)
 			{
 				comb[p] = counter;
 				if(p == k)
-					print ();
-				combinations(p + 1, counter);
+					print();
+				combinations(p + 1, counter + 1);
 			}
 		}
 		
 		static void print()
 		{
 			for(int i = 1; i <= k; i++)
-				Console.Write (comb[i] + " ");
+				Console.Write (words[comb[i] - 1] + " ");
 			Console.WriteLine();
 		}
 	}
